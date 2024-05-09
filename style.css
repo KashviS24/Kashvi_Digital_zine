@@ -1,307 +1,339 @@
-@font-face{
-    font-family:prosto-one;
-    src: url(assets/fonts/ProstoOne-Regular.ttf);
+@font-face {
+  font-family: prosto-one;
+  src: url(assets/fonts/ProstoOne-Regular.ttf);
+}
+
+body {
+  font-family: prosto-one;
+  background-color: black;
+  color: white;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  text-align: left;
+}
+
+.title h1 {
+  margin: 0;
+  font-size: 40px;
+}
+
+.title h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.image-container {
+  text-align: center;
+  z-index: 1000;
+}
+
+.image-container img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
   }
-  
-  body{
-    font-family: prosto-one;
-    background-color: black;
-    color: white;
-    height: 100%;
-    overflow-y:hidden;
+
+  100% {
+    transform: translateX(-100%);
   }
-  
-  *{
-    box-sizing: border-box;
+}
+
+.songboxes {
+  display: flex;
+  transition: transform 1s ease;
+  animation: slide-right 30s linear infinite;
+  animation-delay: 0s;
+}
+
+.songboxes.cycle {
+  animation-play-state: running;
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(0%);
   }
-  
-  header{
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+  100% {
+    transform: translateX(-100%);
   }
-  
-  .title {
-    text-align: left;
-  }
-  
-  .title h1 {
-    margin: 0;
-    font-size: 40px;
-  }
-  
-  .title h2 {
-    margin: 0;
-    font-size: 16px;
-  }
-  
-  .image-container {
-    text-align: center;
-    z-index: 1000;
-  }
-  
-  .image-container img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 1px solid white;
-  }
-  
-  @keyframes slide {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-  
-  .carousel-container {
-    display:flex;
-    position: relative;
-    overflow-x: auto;
-    padding: 5% 0;
-    white-space: nowrap;
-  }
-  
-  .songboxes {
-    display: inline-flex;
-    animation: 60s slide infinite linear;
-  }
-  
-  .songboxes:hover{
-    animation-play-state: paused;
-  }
-  
-  .songboxes .carousel-item {
-    flex: 0 0 auto;
-    margin: 0 10px;
-    width: 350px;
-    height: 450px;
-    border-radius: 10%;
-    position: relative;
-  }
-  ::-webkit-scrollbar {
-    display: none;
-  }
-  
-  /* artist blocks */
-  .enayet{
-    background-color: #EB7F96;
-  }
-  .three-oscillators{
-    background-color: #E88D38;
-  }
-  .nate08{
-    background-color: #425C73;
-  }
-  .babloo-babylon{
-    background-color: #60643F;
-  }
-  .yungraj{
-    background-color: #E8323F;
-  }
-  .eashwar{
-    background-color: #CCC084;
-  }
-  .jwala{
-    background-color: #C9C332;
-  }
-  .ynzn{
-    background-color: #020CD6;
-  }
-  .foeseal{
-    background-color: #A6321E;
-  }
-  .alif{
-    background-color: #A3D4E7;
-  }
-  
-  .carousel-item a{
-    font-size: 40px;
-  }
-  .about{
-    position: absolute;
-    left: 50%;
-    right: 50%;
-  }
-  
-  .about a{
-    text-decoration: none;
-    position: fixed;
-    bottom: 20px;
-    border: 1px solid white;
-    background-color: black;
-    color: white;
-    font-size: 16px;
-    padding: 10px 20px;
-    border-radius: 20px;
-  }
-  
-  .about a:hover {
-    background-color: #C55B19;
-    border: 1px solid white;
-  }
-  
-  .aboutcontent{
-    padding: 20px;
-  }
-  
-  /* about page specific styles */
-  @media only screen and (min-width: 600px) {
-    .aboutcontent{
+}
+
+.carousel-container {
+  display: flex;
+  position: relative;
+  overflow-x: auto; /* Change overflow to auto */
+  padding: 5% 0;
+  white-space: nowrap;
+}
+
+.songboxes:hover {
+  animation-play-state: paused;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  margin: 0 10px;
+  width: 350px;
+  height: 450px;
+  border-radius: 10%;
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* artist blocks */
+.enayet {
+  background-color: #eb7f96;
+}
+.three-oscillators {
+  background-color: #e88d38;
+}
+.nate08 {
+  background-color: #425c73;
+}
+.babloo-babylon {
+  background-color: #60643f;
+}
+.yungraj {
+  background-color: #e8323f;
+}
+.eashwar {
+  background-color: #ccc084;
+}
+.jwala {
+  background-color: #c9c332;
+}
+.ynzn {
+  background-color: #020cd6;
+}
+.foeseal {
+  background-color: #a6321e;
+}
+.alif {
+  background-color: #a3d4e7;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+}
+
+.carousel-item a {
+  font-size: 40px;
+}
+
+.about {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+}
+
+.about a {
+  text-decoration: none;
+  position: fixed;
+  bottom: 20px;
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.about a:hover {
+  background-color: #c55b19;
+  border: 1px solid white;
+}
+
+.aboutcontent {
+  padding: 20px;
+}
+
+/* about page specific styles */
+@media only screen and (min-width: 600px) {
+  .aboutcontent {
     width: 100%;
     padding: 20px;
-    } 
   }
-  
-  @media only screen and (min-width: 768px){
-    .aboutcontent{
+}
+
+@media only screen and (min-width: 768px) {
+  .aboutcontent {
     width: 90%;
     padding: 20px;
-    } 
   }
-  
-  @media only screen and (min-width: 1200px){
-    .aboutcontent{
+}
+
+@media only screen and (min-width: 1200px) {
+  .aboutcontent {
     width: 75%;
     padding: 20px;
-    } 
   }
-  
-  .contact{
-    text-decoration: none;
-    color: white;
-    background-color: black;
-    padding: 10px;
-    border-radius: 15px;
-    border: 1px solid white;
-  }
-  
-  /* sidebar styles */
-  @media only screen and (min-width: 1200px){
-   .sidebar {
+}
+
+.contact {
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  padding: 10px;
+  border-radius: 15px;
+  border: 1px solid white;
+}
+
+/* sidebar styles */
+@media only screen and (min-width: 1200px) {
+  .sidebar {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     width: 250px;
-    background-color: #E88D38;
-   }
-  .image-container {
-      padding-right: 40px;
+    background-color: #e88d38;
   }
-  .contact{
+
+  .image-container {
+    padding-right: 40px;
+  }
+
+  .contact {
     position: fixed;
     right: 45px;
     bottom: 20px;
-  } 
   }
-  
-  @media only screen and (max-width: 1199px){
-   .sidebar {
+}
+
+@media only screen and (max-width: 1199px) {
+  .sidebar {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     width: 100px;
-    background-color: #E88D38;
-   }
-  .image-container {
-      padding-right: 25px;
+    background-color: #e88d38;
   }
-  .contact{
+
+  .image-container {
+    padding-right: 25px;
+  }
+
+  .contact {
     position: relative;
     top: 10px;
     left: 20px;
     bottom: 20px;
-  } 
   }
-  
-  @media only screen and (max-width: 768px){
-   .sidebar {
+}
+
+@media only screen and (max-width: 768px) {
+  .sidebar {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     width: 20px;
-    background-color: #E88D38;
-   }
-  .contact{
+    background-color: #e88d38;
+  }
+
+  .contact {
     position: relative;
     left: 20px;
     bottom: 20px;
-  } 
   }
-  
-  @media only screen and (max-width: 602px){
-   .sidebar {
+}
+
+@media only screen and (max-width: 602px) {
+  .sidebar {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     width: 0px;
-   }
-  .contact{
+  }
+
+  .contact {
     position: relative;
     left: 20px;
     bottom: 20px;
-  } 
   }
-  
-  .embedded-song{
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    margin: -150px 0 0 -150px;
-  }
-  
-  .embedded-song-even{
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    margin: -150px 0 0 -150px;
-  }
-  
-  /* card sytyle*/
-  .card.animate .content{
-    transform: rotateY(180deg);
-  }
-  
-  .box,
-  .front,
-  .back{
-    width:350px;
-    height: 450px;
-  }
-  .content{
-    transition: 0.8s;
-    transform-style: preserve-3d;
-    position: relative;
-  }
-  
-  .front,
-  .back{
-    backface-visibility: hidden;
-    position: absolute;
-    top: 0;
-    left:0;
-  }
-  .front{
-    z-index: 2;
-    transform: rotateY(0);
-  }
-  .back{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 10px;
-    transform: rotateY(180deg);
-    background-color: #EB7F96;
-  }
-  
-  .back-content{
-     border: 1px solid white;
-  }
+}
+
+.embedded-song {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin: -150px 0 0 -150px;
+}
+
+.embedded-song-even {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  margin: -150px 0 0 -150px;
+}
+
+/* card style */
+.card.animate .content {
+  transform: rotateY(180deg);
+}
+
+.box,
+.front,
+.back {
+  width: 350px;
+  height: 450px;
+}
+
+.content {
+  transition: 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.front {
+  z-index: 2;
+  transform: rotateY(0);
+}
+
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  transform: rotateY(180deg);
+  background-color: #eb7f96;
+}
+
+.back-content {
+  border: 1px solid white;
+}
