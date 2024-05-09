@@ -363,3 +363,10 @@ header {
   border: 1px solid white;
 }
 
+.social{
+  color: #a3d4e7;
+}
+
+.aboutcontent img{
+  width: 40%;
+}
