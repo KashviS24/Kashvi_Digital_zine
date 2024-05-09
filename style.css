@@ -67,6 +67,7 @@ header {
 .dropdown-menu ul li {
   margin-bottom: 5px;
   text-align: right;
+  border-bottom: 1px solid rgb(19, 17, 17);
 }
 
 .dropdown-menu ul li a {
@@ -90,8 +91,8 @@ header {
 
 .songboxes {
   display: flex;
-  transition: transform 1s ease;
-  animation: slide-right 30s linear infinite;
+  transition: transform 0.5s ease;
+  animation: slide-right 80s linear infinite;
   animation-delay: 0s;
 }
 
