@@ -120,6 +120,10 @@ header {
   position: relative;
 }
 
+.carousel-item a {
+  font-size: 40px;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -154,14 +158,6 @@ header {
 }
 .alif {
   background-color: #a3d4e7;
-}
-
-.carousel-item {
-  flex: 0 0 auto;
-}
-
-.carousel-item a {
-  font-size: 40px;
 }
 
 .about {
@@ -230,7 +226,6 @@ header {
     right: 0;
     bottom: 0;
     width: 250px;
-    background-color: #e88d38;
   }
 
   .image-container {
@@ -251,7 +246,6 @@ header {
     right: 0;
     bottom: 0;
     width: 100px;
-    background-color: #e88d38;
   }
 
   .image-container {
@@ -273,7 +267,6 @@ header {
     right: 0;
     bottom: 0;
     width: 20px;
-    background-color: #e88d38;
   }
 
   .contact {
@@ -369,3 +362,4 @@ header {
   border-radius: 50%;
   border: 1px solid white;
 }
+
